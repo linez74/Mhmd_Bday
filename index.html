@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Invite Retro Duck</title>
+<style>
+body {
+  margin:0;
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(120deg, #fff9a8 0%, #d4f4a8 50%, #a8f4c2 100%);
+  color: #2b4d26;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* Retro window style */
+.invite-window {
+  width: 90%;
+  max-width: 480px;
+  margin: 80px auto;
+  background: linear-gradient(180deg, #ffffc3 0%, #e0f2c3 100%);
+  border: 4px solid #88c65b;
+  border-radius: 6px;
+  box-shadow: 0 0 15px #bde49c;
+  position: relative;
+  animation: bounceIn 1s ease;
+}
+
+.invite-title {
+  background: linear-gradient(90deg, #b0f05b, #78c15a);
+  color: #1b421c;
+  padding: 6px 10px;
+  font-weight: bold;
+  font-size: 1.1em;
+  border-bottom: 2px solid #2d6e1e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.invite-title span.close-btn {
+  font-weight: bold;
+  cursor: pointer;
+  color: #1b421c;
+}
+
+.invite-content {
+  padding: 20px;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.button-ok {
+  margin-top: 15px;
+  padding: 8px 14px;
+  background: linear-gradient(180deg,#b0f05b,#88c65b);
+  border: 2px outset #5f8f34;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.button-ok:hover {
+  transform: scale(1.1);
+}
+
+/* Duck animation */
+.duck {
+  position: absolute;
+  font-size: 40px;
+  bottom: 10%;
+  animation: waddle 6s ease-in-out infinite alternate;
+}
+
+@keyframes waddle {
+  0% { transform: translateX(0px) rotate(-5deg); }
+  50% { transform: translateX(30px) rotate(5deg); }
+  100% { transform: translateX(0px) rotate(-5deg); }
+}
+
+
+@keyframes bounceIn {
+  0% { transform: scale(0.5); }
+  60% { transform: scale(1.05); }
+  80% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  .invite-content { font-size: 1em; padding: 15px; }
+  .duck { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+
+<div class="invite-window">
+  <div class="invite-title">BIRTHDAY_INVITE.EXE <span class="close-btn">X</span></div>
+  <div class="invite-content">
+    <h1>Quack Quack! It’s Party Time!</h1>
+    <p>Date: 8/11/2025</p>
+    <p>Time: After Sala 3aser</p>
+    <p>Place: Abajour</p>
+    <p>🦆🐣🦆🐣</p>
+    <button class="button-ok">OK</button>
+  </div>
+</div>
+
+<img src="duck.png" alt="duck" class="duck" style="left: 10%;">
+<img src="duck.png" alt="duck" class="duck" style="left: 70%;">
+
+<script>
+
+const okButton = document.querySelector('.button-ok');
+okButton.addEventListener('mouseenter', () => {
+  const quack = new Audio('quack.mp3');
+  quack.play();
+});
+</script>
+
+</body>
+</html>
