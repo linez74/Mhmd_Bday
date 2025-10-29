@@ -7,6 +7,10 @@
 <title>Birthday Invite Retro Duck</title>
 <style>
 body {
+  display : flex;
+  justify-content : center;
+  min-height : 100vh;
+  flex-direction : column;
   margin:0;
   font-family: 'Tahoma, Geneva, sans-serif';
   background: linear-gradient(120deg, #fff9a8 0%, #d4f4a8 50%, #a8f4c2 100%);
@@ -69,7 +73,7 @@ body {
 /* Duck animation */
 .duck {
   position: absolute;
-  width : 25 px;
+  width : 25px;
   height : auto;
   bottom: 10%;
   animation: waddle 6s ease-in-out infinite alternate;
